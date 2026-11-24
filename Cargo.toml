@@ -1,0 +1,26 @@
+[package]
+name = "dioxus-trace-viewer"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/dioxuspress/dioxus-trace-viewer"
+description = "Zero-backend Rust tracing JSONL & rie-train benchmark waterfall profiler built with Dioxus 0.7 (Web WASM + Desktop)."
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+
+[dependencies]
+dioxus = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
