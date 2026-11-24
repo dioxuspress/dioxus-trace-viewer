@@ -1,0 +1,5 @@
+[application]
+name = "dioxus-trace-viewer"
+
+[web.app]
+title = "Dioxus Trace Viewer — Rust tracing & rie-train Profiler"
